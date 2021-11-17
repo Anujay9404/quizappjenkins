@@ -35,15 +35,15 @@ pipeline {
 //                      s3Upload(workingDir:'dist/my-workout-app', includePathPattern:'**/*', bucket:'my-jenkinsangular1', path:'')
 //             }
 //             }
-            post {
-                success{
-                    bat 'echo "Uploaded to AWS"'
-                }
-                failure{
-                    bat 'echo "failure"'
-                }
-            }
+//             post {
+//                 success{
+//                     bat 'echo "Uploaded to AWS"'
+//                 }
+//                 failure{
+//                     bat 'echo "failure"'
+//                 }
+//             }
         
-        }
+//         }
 //     }
 }

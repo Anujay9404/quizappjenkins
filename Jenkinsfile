@@ -14,13 +14,13 @@ pipeline {
         stage('Install dependencies') {
             steps {
                 echo 'Install deps..'
-                bat 'npm install'
+//                 bat 'npm install'
             }
         }
         stage('Test') {
             steps {
                 echo 'Testing..'
-                bat 'npm test'
+//                 bat 'npm test'
             }
         }
         stage('Package') {
@@ -29,12 +29,12 @@ pipeline {
             }
         }
 
-        stage("Deploy to AWS"){
-            steps{
-                 withAWS(credentials:'puneetawscred', region:'us-east-1') {
-                     s3Upload(workingDir:'dist/my-workout-app', includePathPattern:'**/*', bucket:'my-jenkinsangular1', path:'')
-            }
-            }
+//         stage("Deploy to AWS"){
+//             steps{
+//                  withAWS(credentials:'puneetawscred', region:'us-east-1') {
+//                      s3Upload(workingDir:'dist/my-workout-app', includePathPattern:'**/*', bucket:'my-jenkinsangular1', path:'')
+//             }
+//             }
             post {
                 success{
                     bat 'echo "Uploaded to AWS"'
